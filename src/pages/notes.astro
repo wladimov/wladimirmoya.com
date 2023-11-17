@@ -1,12 +1,52 @@
 ---
 import Layout from '../layouts/Notes.astro';
+const imagen = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg/800px-Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg'
 ---
 
 <Layout
-	title="About Me"
+	title="Notas"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg/800px-Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg"
 >
+	<section class="notas">
+		<figure>
+			<img src= {imagen} alt="">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem, doloremque voluptatum modi labore accusamus explicabo autem consectetur sit pariatur sequi a perspiciatis nostrum, sed magnam ex ad adipisci enim.</p>
+		</figure>
+	</section>
+	<section class="slider">
+		<figure>
+			<picture>
+				<img src= {imagen} alt="">
+				<img src= {imagen} alt="">
+			</picture>
+		</figure>
+	</section>
+	<style>
+		.notas figure {
+			display: flex;
+			gap: 20px;
+			padding: 20px;
+			border: solid 2px #8e32dc;
+			border-radius: 10px;
+		}
+		.notas figure img {
+			width: 20%;
+			height: auto;
+			object-fit: contain;
+		}
+
+		.slider figure picture {
+			display: flex;
+			gap: 10px;
+		}
+		.slider figure img {
+			width: 250px;
+			height: auto;
+			object-fit: contain;
+			border: solid 4px #8e32dc;
+			border-radius: 20px;
+		}
+	</style>
+
 </Layout>
