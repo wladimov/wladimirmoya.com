@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Notes.astro';
-const imagen = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg/800px-Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg'
+/* const imagen = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg/800px-Don_Quijote%2C_Luis_Tasso%2C_%281894%3F%29_%22LLen%C3%B3sele_la_fantas%C3%ADa_de_todo_aquello_que_le%C3%ADa_en_los_libros...%22_%285789891866%29.jpg' */
+const imagen = 'https://upload.wikimedia.org/wikipedia/commons/0/02/Johann_Baptist_Zwecker_Don_Quijote_1854.jpg'
 ---
 
 <Layout
@@ -8,44 +9,39 @@ const imagen = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Don_Qu
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
 >
-	<section class="notas">
-		<figure>
-			<img src= {imagen} alt="">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem, doloremque voluptatum modi labore accusamus explicabo autem consectetur sit pariatur sequi a perspiciatis nostrum, sed magnam ex ad adipisci enim.</p>
-		</figure>
-	</section>
-	<section class="slider">
-		<figure>
-			<picture>
-				<img src= {imagen} alt="">
-				<img src= {imagen} alt="">
+	<section class="container">
+		<article class="content">
+			<h2>El ingenioso hidalgo don Quijote de la Mancha</h2>
+			<h3>Miguel de Cervantes Saavedra</h3>
+			<picture class="slider">
+				<img src={imagen} alt="">
 			</picture>
-		</figure>
+			<p>Publicado en 1605, El Quijote es una obra que ha trascendido en el tiempo. La historia del hidalgo Alonso Quijano, quien se convierte en el valiente Don Quijote para luchar contra el mal y la injusticia, ha cautivado a generaciones de lectores y se ha convertido en un ícono. Fyodor Dostoyevsky admiraba profundamente esta obra, afirmando que "Don Quijote es uno de los personajes más hermosos de la literatura universal, y es difícil no quererlo". La complejidad y profundidad de los personajes, así como la riqueza del lenguaje y la crítica social que plantea Cervantes, son algunas de las razones por las que esta obra sigue siendo relevante en la actualidad y continúa siendo leída y admirada en todo el mundo.</p>
+		</article>
+		<article class="content">
+			<h2>La Metamorfosis</h2>
+			<h3>Franz Kafka</h3>
+			<picture class="slider">
+				<img src="https://images.pexels.com/photos/1913226/pexels-photo-1913226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+			</picture>
+			<p>Es una novela corta escrita por Franz Kafka en 1915. La historia trata sobre Gregorio Samsa, cuya repentina transformación en un enorme insecto dificulta cada vez más la comunicación de su entorno social con él, hasta que es considerado intolerable por su familia y finalmente perece. Con un volumen de unas 70 páginas impresas, es el más largo de los relatos que Kafka terminó y publicó durante su vida. </p>
+		</article>
 	</section>
 	<style>
-		.notas figure {
-			display: flex;
-			gap: 20px;
-			padding: 20px;
-			border: solid 2px #8e32dc;
-			border-radius: 10px;
+		.content h3 {
+			font-style: italic;
+			color: #4e4e4e;
 		}
-		.notas figure img {
-			width: 20%;
-			height: auto;
-			object-fit: contain;
-		}
-
-		.slider figure picture {
+		.slider {
 			display: flex;
+			justify-content: center;
 			gap: 10px;
 		}
-		.slider figure img {
-			width: 250px;
+		.slider img {
+			width: 100%;
 			height: auto;
 			object-fit: contain;
-			border: solid 4px #8e32dc;
-			border-radius: 20px;
+			border-radius: 10px;
 		}
 	</style>
 
