@@ -14,6 +14,10 @@ const heroImageAlt = 'Logo de Wladimir Moya';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+
+const books = (await getCollection('notes')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <!DOCTYPE html>
@@ -97,37 +101,27 @@ const posts = (await getCollection('blog')).sort(
 				}
 			</section>
 			<section>
-				<h3>Notas</h3>
-				<a href="/notes">
-					<picture>
-						<img class="img" src="https://upload.wikimedia.org/wikipedia/commons/0/02/Johann_Baptist_Zwecker_Don_Quijote_1854.jpg" alt="" />
-					</picture>
-					<div>
-						<h2 class="title-post">El ingenioso hidalgo don Quijote de la Mancha</h2>
-						<time class="info">Miguel de Cervantes Saavedra</time>
-					</div>
-				</a>
-			</section>
-			<!-- <section>
-				<h3>Últimos artículos</h3>
-				{posts.map((post) =>(
-					<a href={`/blog/${post.slug}/`}>
-						<picture>
-							<img class="img" src={post.data.mainImage} alt={post.data.alt} />
-						</picture>
-						<div>
-							<h2 class="title-post">{post.frontmatter.title}</h2>
-							<time class="info" datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('es', {
+				<h3>Últimas notas</h3>
+				{
+					books.map((post)=> (
+						<a href={`/notes/${post.slug}/`}>
+							<picture>
+								<img class="img" src={post.data.heroImage} alt={post.data.description} />
+							</picture>
+							<div>
+								<h2 class="title-post">{post.data.title}</h2>
+								<time class="info">
+									{new Date(post.data.pubDate).toLocaleDateString('es', {
 										year: 'numeric',
 										month: 'long',
 										day: 'numeric',
 									})}
-							</time>
-						</div>
-					</a>
-				))}
-			</section> -->
+								</time>
+							</div>
+						</a>
+					))
+				}
+			</section>
 		</main>
 		<Footer />
 	</body>
