@@ -17,7 +17,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<ViewTransitions />
@@ -95,6 +95,18 @@ const posts = (await getCollection('blog')).sort(
 						</a>
 					))
 				}
+			</section>
+			<section>
+				<h3>Notas</h3>
+				<a href="/notes">
+					<picture>
+						<img class="img" src="https://upload.wikimedia.org/wikipedia/commons/0/02/Johann_Baptist_Zwecker_Don_Quijote_1854.jpg" alt="" />
+					</picture>
+					<div>
+						<h2 class="title-post">El ingenioso hidalgo don Quijote de la Mancha</h2>
+						<time class="info">Miguel de Cervantes Saavedra</time>
+					</div>
+				</a>
 			</section>
 			<!-- <section>
 				<h3>Últimos artículos</h3>
