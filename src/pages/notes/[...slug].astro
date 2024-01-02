@@ -13,6 +13,11 @@ type Props = CollectionEntry<'notes'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const publishedBlogEntries = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
 ---
 
 <NotesPost {...post.data}>

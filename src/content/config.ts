@@ -17,6 +17,7 @@ const blog = defineCollection({
 		heroImage: z.string().optional(),
 		alt: z.string().optional(),
 		author: z.string().optional(),
+		draft: z.boolean().optional(),
 	}),
 });
 
@@ -37,6 +38,7 @@ const notes = defineCollection({
 		heroImage: z.string().optional(),
 		alt: z.string().optional(),
 		author: z.string().optional(),
+		draft: z.boolean().optional(),
 	}),
 });
 
