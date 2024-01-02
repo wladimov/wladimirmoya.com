@@ -1,8 +1,9 @@
 ---
 title: "Escribir"
-description: "Un superpoder que todos tenemos"
-pubDate: "May 01 2023"
+description: ""
+pubDate: "Jan 15 2024"
 heroImage: "/wladimirmoya.svg"
 author: "/favicon.svg"
+draft: true
 ---
 
