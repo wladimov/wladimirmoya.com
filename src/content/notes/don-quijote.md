@@ -1,7 +1,7 @@
 ---
 title: "El ingenioso hidalgo don Quijote de la Mancha"
 description: "La historia del hidalgo Alonso Quijano"
-pubDate: "jan 01 2024"
+pubDate: "Jan 01 2024"
 heroImage: "https://upload.wikimedia.org/wikipedia/commons/0/02/Johann_Baptist_Zwecker_Don_Quijote_1854.jpg"
 author: "/favicon.svg"
 draft: true
