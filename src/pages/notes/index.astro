@@ -16,21 +16,52 @@ const posts = (await getCollection('notes')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			ul {
+			section {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
 				list-style-type: none;
 				padding: unset;
 			}
-			ul li {
+			a {
 				display: flex;
-				gap: 5px;
+				flex-direction: column;
+				padding: 10px;
+				text-decoration: none;
+				background-color: #f1f5f9;
+				border-radius: 5px;
 			}
-			ul li :global(time) {
-				flex: 0 0 130px;
+			a:hover {
+				background-color: #e8f6ff;
+			}
+			
+			a h2 {
+				margin: 0;
+				color: #000;
+				font-size: 20px;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			a:hover h2 {
+				color: #09f;
+			}
+			a p {
+				margin: 0;
+				color: #666;
+				font-weight: 100;
+				text-decoration: none;
+			}
+			a div {
+				position: relative;
+				height: 15px;
+			}
+			a :global(time) {
+				font-size: 12px;
 				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
+				color: #333;
+				position: absolute;
+				bottom: 0;
+				right: 5px;
 			}
 		</style>
 	</head>
@@ -38,17 +69,17 @@ const posts = (await getCollection('notes')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
+				{
+					posts.map((post) => (
+						<a href={`/notes/${post.slug}/`}>
+							<h2 >{post.data.title}</>
+							<p> {post.data.description}... </p>
+							<div>
 								<FormattedDate date={post.data.pubDate} />
-								<a href={`/notes/${post.slug}/`}>{post.data.title}</a>
-								<span> {post.data.description} </>
-							</li>
-						))
-					}
-				</ul>
+							</div>
+						</a>
+					))
+				}
 			</section>
 		</main>
 		<Footer />
