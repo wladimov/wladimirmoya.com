@@ -7,32 +7,32 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<html lang="es">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<html lang='es'>
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .title {
+        font-size: 2em;
+        margin: 0.25em 0 0;
+      }
+      hr {
+        border-top: 1px solid #ddd;
+        margin: 1rem 0;
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+    </style>
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<slot />
-			<!-- <article>
+  <body>
+    <Header />
+    <main>
+      <slot />
+      <!-- <article>
 				{heroImage && <img width={360} height={720} src={heroImage} alt={alt} />}
 				<h1 class="title">{title}</h1>
 				<FormattedDate date={pubDate} />
@@ -46,7 +46,7 @@ const { title, description} = Astro.props;
 				<hr />
 				<slot />
 			</article> -->
-		</main>
-		<Footer />
-	</body>
+    </main>
+    <Footer />
+  </body>
 </html>

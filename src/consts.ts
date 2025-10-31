@@ -3,5 +3,5 @@
 
 export const SITE_TITLE = 'Wladimir Moya';
 export const SITE_DESCRIPTION = 'Blog personal de Wladimir Moya sobre sus cosas.';
-export const NAME = "Wladimir Moya";
-export const NICKNAME = "@wladimov";
+export const NAME = 'Wladimir Moya';
+export const NICKNAME = '@wladimov';

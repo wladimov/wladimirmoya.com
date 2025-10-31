@@ -1,9 +1,9 @@
 ---
-title: "La Metamorfosis"
-description: "La historia de Gregorio Samsa, quien se despierta una mañana convertido en un enorme insecto."
-pubDate: "Jun 03 2024"
-heroImage: "https://images.pexels.com/photos/1101214/pexels-photo-1101214.jpeg"
-author: "/favicon.svg"
+title: 'La Metamorfosis'
+description: 'La historia de Gregorio Samsa, quien se despierta una mañana convertido en un enorme insecto.'
+pubDate: 'Jun 03 2024'
+heroImage: 'https://images.pexels.com/photos/1101214/pexels-photo-1101214.jpeg'
+author: '/favicon.svg'
 draft: true
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: "De la brevedad de la vida"
-description: ""
-pubDate: "Jul 31 2024"
-heroImage: "https://images.pexels.com/photos/11873897/pexels-photo-11873897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-author: "/favicon.svg"
+title: 'De la brevedad de la vida'
+description: ''
+pubDate: 'Jul 31 2024'
+heroImage: 'https://images.pexels.com/photos/11873897/pexels-photo-11873897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+author: '/favicon.svg'
 draft: true
 ---
 

@@ -6,82 +6,80 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('notes')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = (await getCollection('notes')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			section {
-				display: flex;
-				flex-direction: column;
-				gap: 5px;
-				list-style-type: none;
-				padding: unset;
-			}
-			a {
-				display: flex;
-				flex-direction: column;
-				padding: 10px;
-				text-decoration: none;
-				background-color: #f1f5f9;
-				border-radius: 5px;
-			}
-			a:hover {
-				background-color: #e8f6ff;
-			}
-			
-			a h2 {
-				margin: 0;
-				color: #000;
-				font-size: 20px;
-				font-weight: bold;
-				text-decoration: none;
-			}
-			a:hover h2 {
-				color: #09f;
-			}
-			a p {
-				margin: 0;
-				color: #666;
-				font-weight: 100;
-				text-decoration: none;
-			}
-			a div {
-				position: relative;
-				height: 15px;
-			}
-			a :global(time) {
-				font-size: 12px;
-				font-style: italic;
-				color: #333;
-				position: absolute;
-				bottom: 0;
-				right: 5px;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				{
-					posts.map((post) => (
-						<a href={`/notes/${post.slug}/`}>
-							<h2 >{post.data.title}</>
-							<p> {post.data.description}... </p>
-							<div>
-								<FormattedDate date={post.data.pubDate} />
-							</div>
-						</a>
-					))
-				}
-			</section>
-		</main>
-		<Footer />
-	</body>
+<!doctype html>
+<html lang='es'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        list-style-type: none;
+        padding: unset;
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        text-decoration: none;
+        background-color: #f1f5f9;
+        border-radius: 5px;
+      }
+      a:hover {
+        background-color: #e8f6ff;
+      }
+
+      a h2 {
+        margin: 0;
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a:hover h2 {
+        color: #09f;
+      }
+      a p {
+        margin: 0;
+        color: #666;
+        font-weight: 100;
+        text-decoration: none;
+      }
+      a div {
+        position: relative;
+        height: 15px;
+      }
+      a :global(time) {
+        font-size: 12px;
+        font-style: italic;
+        color: #333;
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        {
+          posts.map((post) => (
+            <a href={`/notes/${post.slug}/`}>
+              <h2>{post.data.title}</h2>
+              <p> {post.data.description}... </p>
+              <div>
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+            </a>
+          ))
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
