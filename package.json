@@ -8,12 +8,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write \"**/*.{astro,js,mjs,cjs,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{astro,js,mjs,cjs,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.0.3",
-    "@astrojs/rss": "^4.0.1",
-    "@astrojs/sitemap": "^3.0.4",
-    "astro": "^4.0.8"
+    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.15.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
