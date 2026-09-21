@@ -1,0 +1,96 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, isPublished } from '../consts';
+import { getCollection } from 'astro:content';
+import { ClientRouter } from 'astro:transitions';
+
+const posts = (await getCollection('blog', isPublished)).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ClientRouter />
+    <style>
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 10px 0;
+        padding: 10px;
+        text-decoration: none;
+        background-color: #f1f5f9;
+        border-radius: 5px;
+      }
+      a:hover {
+        background-color: #e8f6ff;
+      }
+      a:hover h2 {
+        color: #09f;
+      }
+      a:hover img {
+        transform: scale(1.1);
+      }
+      picture {
+        display: flex;
+      }
+      .img {
+        width: 48px;
+        max-width: 48px;
+        height: 48px;
+        object-fit: contain;
+        transition: transform ease 0.3s;
+      }
+      .title-post {
+        margin: 0;
+        color: #444;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .info {
+        color: #535353;
+        font-size: 12px;
+        padding-top: 4px;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 32px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <section>
+        <h3>Últimos artículos</h3>
+        {
+          posts.map((post) => (
+            <a href={`/blog/${post.id}/`}>
+              <picture>
+                <img class='img' src={post.data.heroImage} alt={post.data.description} />
+              </picture>
+              <div>
+                <h2 class='title-post'>{post.data.title}</h2>
+                <time class='info'>
+                  {new Date(post.data.pubDate).toLocaleDateString('es', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+              </div>
+            </a>
+          ))
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

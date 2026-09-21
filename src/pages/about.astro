@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import { NAME, SITE_DESCRIPTION } from '../consts';
+---
+
+<Layout
+  title={`About ${NAME}`}
+  description={SITE_DESCRIPTION}
+  pubDate={new Date('January 01 2024')}
+  heroImage='/wladimirmoya.svg'
+/>
